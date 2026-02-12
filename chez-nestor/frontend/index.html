@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chez Nest-Or - La Pizzeria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="logo.png" alt="Chez Nest-Or Logo" class="logo">
+            <nav class="main-nav">
+                <button class="nav-btn active" data-view="menu">Menu</button>
+                <button class="nav-btn" data-view="orders">Commandes</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="menu-view" class="view active">
+            <section class="menu-section">
+                <h2>🍕 Pizzas</h2>
+                <div id="pizzas-list" class="menu-grid">
+                </div>
+            </section>
+
+            <section class="menu-section">
+                <h2>🥤 Boissons</h2>
+                <div id="drinks-list" class="menu-grid">
+                </div>
+            </section>
+
+            <section class="menu-section">
+                <h2>🍰 Desserts</h2>
+                <div id="desserts-list" class="menu-grid">
+                </div>
+            </section>
+        </div>
+
+        <div id="orders-view" class="view">
+            <section class="orders-section">
+                <div class="orders-header">
+                    <h2>📦 Commandes</h2>
+                    <div class="filter-tabs">
+                        <button class="filter-btn active" data-filter="all">Toutes</button>
+                        <button class="filter-btn" data-filter="pending">En attente</button>
+                        <button class="filter-btn" data-filter="processed">Terminées</button>
+                    </div>
+                </div>
+                <div id="orders-list" class="orders-container">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <aside id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Votre commande</h3>
+            <button class="close-cart" id="close-cart">×</button>
+        </div>
+        <div class="cart-content">
+            <div id="cart-items" class="cart-items">
+                <div class="empty-cart">Votre panier est vide</div>
+            </div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Sous-total</span>
+                    <span id="cart-subtotal">0.00 €</span>
+                </div>
+                <div class="summary-row discount" id="cart-discount" style="display: none;">
+                    <span>Réduction menu (-10%)</span>
+                    <span id="discount-amount">0.00 €</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="cart-total">0.00 €</span>
+                </div>
+            </div>
+            <button id="checkout-btn" class="btn-checkout" disabled>
+                Commander
+            </button>
+        </div>
+    </aside>
+
+    <button id="cart-toggle" class="cart-toggle">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count" id="cart-count">0</span>
+    </button>
+
+    <script src="app.js"></script>
+</body>
+</html>

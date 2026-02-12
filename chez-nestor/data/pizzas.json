@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Margherita",
+    "price": 8.5,
+    "ingredients": ["Tomate", "Mozzarella", "Basilic"],
+    "available": true
+  },
+  {
+    "id": 2,
+    "name": "Pepperoni",
+    "price": 10.5,
+    "ingredients": ["Tomate", "Mozzarella", "Pepperoni"],
+    "available": true
+  },
+  {
+    "id": 3,
+    "name": "Quatre Fromages",
+    "price": 11.5,
+    "ingredients": ["Mozza", "Gorgonzola", "Parmesan", "Chèvre"],
+    "available": true
+  },
+  {
+    "id": 4,
+    "name": "Hawaïenne",
+    "price": 9.5,
+    "ingredients": ["Tomate", "Mozzarella", "Jambon", "Ananas"],
+    "available": true
+  }
+]

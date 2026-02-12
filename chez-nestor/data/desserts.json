@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Tiramisu",
+    "price": 5.5,
+    "available": true
+  },
+  {
+    "id": 2,
+    "name": "Fondant au chocolat",
+    "price": 6.0,
+    "available": true
+  },
+  {
+    "id": 3,
+    "name": "Frangipane",
+    "price": 4.5,
+    "available": true
+  }
+]

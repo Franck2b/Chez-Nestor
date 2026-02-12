@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "pizzas": [
+      1
+    ],
+    "drinks": [
+      3
+    ],
+    "desserts": [
+      3
+    ],
+    "totalPrice": 13.95,
+    "processed": false,
+    "createdAt": "2026-02-12T13:22:39.771Z"
+  }
+]

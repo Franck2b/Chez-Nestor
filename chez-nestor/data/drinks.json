@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Coca-Cola",
+    "price": 3.5,
+    "size": "33cl",
+    "withAlcohol": false,
+    "available": true
+  },
+  {
+    "id": 2,
+    "name": "Bière",
+    "price": 4.5,
+    "size": "33cl",
+    "withAlcohol": true,
+    "available": true
+  },
+  {
+    "id": 3,
+    "name": "Eau minérale",
+    "price": 2.5,
+    "size": "50cl",
+    "withAlcohol": false,
+    "available": true
+  }
+]

@@ -1,0 +1,891 @@
+{
+  "info": {
+    "name": "Chez Nest-Or - Tests Complets",
+    "description": "Collection Postman pour tester l'API Chez Nest-Or - Tester dans l'ordre",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Pizzas",
+      "item": [
+        {
+          "name": "GET - Liste des pizzas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/pizzas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "pizzas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET - Détail pizza (ID 1)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/pizzas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "pizzas",
+                "1"
+              ]
+            }
+          },
+          "description": "Récupère le détail d'une pizza",
+          "response": []
+        },
+        {
+          "name": "POST - Créer une pizza",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Reine\",\n  \"price\": 12.0,\n  \"ingredients\": [\"Tomate\", \"Mozzarella\", \"Jambon\", \"Champignons\"],\n  \"available\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/pizzas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "pizzas"
+              ]
+            }
+          },
+          "description": "Crée une nouvelle pizza",
+          "response": []
+        },
+        {
+          "name": "PUT - Modifier pizza (ID 1)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Margherita Deluxe\",\n  \"price\": 9.5,\n  \"ingredients\": [\"Tomate\", \"Mozzarella\", \"Basilic\", \"Huile d'olive\"],\n  \"available\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/pizzas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "pizzas",
+                "1"
+              ]
+            }
+          },
+          "description": "Modifie complètement une pizza",
+          "response": []
+        },
+        {
+          "name": "POST - Erreur validation (nom trop court)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"AB\",\n  \"price\": 10.0,\n  \"ingredients\": [\"Tomate\"],\n  \"available\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/pizzas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "pizzas"
+              ]
+            }
+          },
+          "description": "Test validation : nom doit contenir au moins 3 caractères",
+          "response": []
+        },
+        {
+          "name": "POST - Erreur validation (prix négatif)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test\",\n  \"price\": -5,\n  \"ingredients\": [\"Tomate\"],\n  \"available\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/pizzas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "pizzas"
+              ]
+            }
+          },
+          "description": "Test validation : prix doit être strictement positif",
+          "response": []
+        },
+        {
+          "name": "DELETE - Supprimer pizza (ID 4)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/pizzas/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "pizzas",
+                "4"
+              ]
+            }
+          },
+          "description": "Supprime une pizza",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "2. Drinks",
+      "item": [
+        {
+          "name": "GET - Liste des boissons",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/drinks",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "drinks"
+              ]
+            }
+          },
+          "description": "Récupère toutes les boissons disponibles",
+          "response": []
+        },
+        {
+          "name": "GET - Détail boisson (ID 1)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/drinks/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "drinks",
+                "1"
+              ]
+            }
+          },
+          "description": "Récupère le détail d'une boisson",
+          "response": []
+        },
+        {
+          "name": "POST - Créer une boisson",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Sprite\",\n  \"price\": 3.0,\n  \"size\": \"33cl\",\n  \"withAlcohol\": false,\n  \"available\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/drinks",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "drinks"
+              ]
+            }
+          },
+          "description": "Crée une nouvelle boisson",
+          "response": []
+        },
+        {
+          "name": "PUT - Modifier boisson (ID 1)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Coca-Cola Zero\",\n  \"price\": 3.5,\n  \"size\": \"50cl\",\n  \"withAlcohol\": false,\n  \"available\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/drinks/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "drinks",
+                "1"
+              ]
+            }
+          },
+          "description": "Modifie complètement une boisson",
+          "response": []
+        },
+        {
+          "name": "DELETE - Supprimer boisson (ID 4)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/drinks/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "drinks",
+                "4"
+              ]
+            }
+          },
+          "description": "Supprime une boisson",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "3. Desserts",
+      "item": [
+        {
+          "name": "GET - Liste des desserts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/desserts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "desserts"
+              ]
+            }
+          },
+          "description": "Récupère tous les desserts disponibles",
+          "response": []
+        },
+        {
+          "name": "GET - Détail dessert (ID 1)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/desserts/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "desserts",
+                "1"
+              ]
+            }
+          },
+          "description": "Récupère le détail d'un dessert",
+          "response": []
+        },
+        {
+          "name": "POST - Créer un dessert",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Mousse au chocolat\",\n  \"price\": 5.0,\n  \"available\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/desserts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "desserts"
+              ]
+            }
+          },
+          "description": "Crée un nouveau dessert",
+          "response": []
+        },
+        {
+          "name": "PUT - Modifier dessert (ID 1)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Tiramisu Maison\",\n  \"price\": 6.0,\n  \"available\": true\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/desserts/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "desserts",
+                "1"
+              ]
+            }
+          },
+          "description": "Modifie complètement un dessert",
+          "response": []
+        },
+        {
+          "name": "DELETE - Supprimer dessert (ID 4)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/desserts/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "desserts",
+                "4"
+              ]
+            }
+          },
+          "description": "Supprime un dessert",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "4. Orders - Tests de base",
+      "item": [
+        {
+          "name": "GET - Liste des commandes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "description": "Récupère toutes les commandes",
+          "response": []
+        },
+        {
+          "name": "POST - Créer commande simple (pizza seule)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pizzas\": [1],\n  \"drinks\": [],\n  \"desserts\": []\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "description": "Crée une commande avec seulement une pizza (pas de réduction)",
+          "response": []
+        },
+        {
+          "name": "GET - Détail commande (ID 1)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/orders/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders",
+                "1"
+              ]
+            }
+          },
+          "description": "Récupère le détail d'une commande",
+          "response": []
+        },
+        {
+          "name": "POST - Créer commande avec menu (réduction 10%)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pizzas\": [1],\n  \"drinks\": [1],\n  \"desserts\": [1]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "description": "Crée une commande éligible pour la réduction menu (1 pizza + 1 boisson sans alcool + 1 dessert). Vérifier que totalPrice applique la réduction de 10%.",
+          "response": []
+        },
+        {
+          "name": "POST - Commande avec menu + éléments supplémentaires",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pizzas\": [1, 2],\n  \"drinks\": [1, 2],\n  \"desserts\": [1]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "description": "Commande avec menu (pizza 1 + drink 1 + dessert 1) + pizza 2 + drink 2 (alcool). La réduction s'applique seulement sur les 3 premiers éléments.",
+          "response": []
+        },
+        {
+          "name": "PUT - Modifier commande (ID 2)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pizzas\": [2],\n  \"drinks\": [3],\n  \"desserts\": [2]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders",
+                "2"
+              ]
+            }
+          },
+          "description": "Modifie complètement une commande. Le totalPrice sera recalculé automatiquement.",
+          "response": []
+        },
+        {
+          "name": "PATCH - Marquer commande comme terminée (ID 1)",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/orders/1/processed",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders",
+                "1",
+                "processed"
+              ]
+            }
+          },
+          "description": "Marque une commande comme traitée (processed = true)",
+          "response": []
+        },
+        {
+          "name": "DELETE - Supprimer commande (ID 3)",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/orders/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders",
+                "3"
+              ]
+            }
+          },
+          "description": "Supprime une commande",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "5. Orders - Tests d'erreurs",
+      "item": [
+        {
+          "name": "POST - Erreur : pizza inexistante",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pizzas\": [999],\n  \"drinks\": [],\n  \"desserts\": []\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "description": "Test : doit retourner 404 car la pizza n'existe pas",
+          "response": []
+        },
+        {
+          "name": "POST - Erreur : pizzas vide",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pizzas\": [],\n  \"drinks\": [],\n  \"desserts\": []\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "description": "Test validation : au moins une pizza est requise (400)",
+          "response": []
+        },
+        {
+          "name": "POST - Erreur : boisson inexistante",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pizzas\": [1],\n  \"drinks\": [999],\n  \"desserts\": []\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "description": "Test : doit retourner 404 car la boisson n'existe pas",
+          "response": []
+        },
+        {
+          "name": "POST - Erreur : dessert inexistant",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pizzas\": [1],\n  \"drinks\": [],\n  \"desserts\": [999]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "description": "Test : doit retourner 404 car le dessert n'existe pas",
+          "response": []
+        },
+        {
+          "name": "GET - Erreur : commande inexistante",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/orders/999",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders",
+                "999"
+              ]
+            }
+          },
+          "description": "Test : doit retourner 404 car la commande n'existe pas",
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "6. Tests Menu - Réduction",
+      "item": [
+        {
+          "name": "POST - Menu avec boisson alcoolisée (pas de réduction)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pizzas\": [1],\n  \"drinks\": [2],\n  \"desserts\": [1]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "description": "Test : pizza + boisson AVEC alcool + dessert = PAS de réduction (les boissons alcoolisées ne comptent pas)",
+          "response": []
+        },
+        {
+          "name": "POST - Menu complet avec réduction",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pizzas\": [1],\n  \"drinks\": [1],\n  \"desserts\": [1]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "description": "Test : pizza + boisson SANS alcool + dessert = réduction de 10% sur ces 3 éléments",
+          "response": []
+        },
+        {
+          "name": "POST - Menu avec éléments multiples",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pizzas\": [1, 2, 3],\n  \"drinks\": [1, 2, 3],\n  \"desserts\": [1, 2]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:3000/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "description": "Test : réduction sur pizza 1 + drink 1 (sans alcool) + dessert 1. Les autres éléments sont au prix normal.",
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ]
+}
